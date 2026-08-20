@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+  body {
+    @apply bg-stone-50 text-stone-800 dark:bg-stone-950 dark:text-stone-200;
+  }
+  ::selection {
+    @apply bg-accent/20;
+  }
+}
+
+@layer components {
+  /* 杂志风正文排版:链接用 accent,标题衬线 */
+  .prose-dnews {
+    @apply prose prose-stone max-w-none dark:prose-invert
+      prose-headings:font-serif prose-headings:scroll-mt-24
+      prose-a:text-accent prose-a:decoration-accent/40 prose-a:underline-offset-4
+      hover:prose-a:decoration-accent
+      prose-li:marker:text-stone-400 dark:prose-li:marker:text-stone-600;
+  }
+}
+
+/* 板块锚点偏移,避开吸顶导航 */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
