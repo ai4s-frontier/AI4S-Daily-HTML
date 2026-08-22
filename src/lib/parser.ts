@@ -25,7 +25,13 @@ const SECTION_TITLE_FALLBACK: Record<string, string> = {
 }
 
 // insights sentinel 段内的 H2 → 子板块 key
-const INSIGHTS_H2_KEYS: Record<string, string> = { 总览: 'overview', 今日洞察: 'insights' }
+// 带符号变体为 2026-08-21 起日报模板新标题,纯文本变体保留以兼容历史报告
+const INSIGHTS_H2_KEYS: Record<string, string> = {
+  总览: 'overview',
+  '📋 总览': 'overview',
+  今日洞察: 'insights',
+  '💡 今日洞察': 'insights',
+}
 
 // weekly sentinel 段内的 H2 → 子板块 key
 const WEEKLY_H2_KEYS: Record<string, string> = {
