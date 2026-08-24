@@ -34,10 +34,14 @@ const INSIGHTS_H2_KEYS: Record<string, string> = {
 }
 
 // weekly sentinel 段内的 H2 → 子板块 key
+// 带符号变体为 2026-08-24 起周报模板新标题,纯文本变体保留以兼容历史报告
 const WEEKLY_H2_KEYS: Record<string, string> = {
   总览: 'weekly_overview',
+  '📋 总览': 'weekly_overview',
   本周洞察: 'weekly_insights',
+  '💡 本周洞察': 'weekly_insights',
   趋势分析: 'weekly_trends',
+  '📈 趋势分析': 'weekly_trends',
 }
 
 // 板块顺序与后端 src/storage.py 的 _SECTION_ORDER 保持一致
