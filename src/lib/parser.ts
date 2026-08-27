@@ -16,6 +16,8 @@ const H2_RE = /^##\s+(.+)$/m
 const SECTION_TITLE_FALLBACK: Record<string, string> = {
   overview: '总览',
   insights: '今日洞察',
+  plateau: '"高原"最新洞察',
+  peak: '"高峰"最新洞察',
   relevance: '与当前工作的相关性',
   gaps: '问题发现',
   rss: '今日Top热点',
@@ -25,12 +27,17 @@ const SECTION_TITLE_FALLBACK: Record<string, string> = {
 }
 
 // insights sentinel 段内的 H2 → 子板块 key
-// 带符号变体为 2026-08-21 起日报模板新标题,纯文本变体保留以兼容历史报告
+// 带符号变体为日报模板新标题,纯文本变体保留以兼容历史报告;
+// 🌄"高原"/⛰️"高峰" 为 2026-08-27 起新板块(替换 💡 今日洞察,旧 key 保留兼容历史报告)
 const INSIGHTS_H2_KEYS: Record<string, string> = {
   总览: 'overview',
   '📋 总览': 'overview',
   今日洞察: 'insights',
   '💡 今日洞察': 'insights',
+  '"高原"最新洞察': 'plateau',
+  '🌄 "高原"最新洞察': 'plateau',
+  '"高峰"最新洞察': 'peak',
+  '⛰️ "高峰"最新洞察': 'peak',
 }
 
 // weekly sentinel 段内的 H2 → 子板块 key

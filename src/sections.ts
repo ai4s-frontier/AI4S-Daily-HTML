@@ -10,7 +10,9 @@ export interface SectionNavItem {
 /** 日报栏目(早报板块) */
 export const DAILY_SECTIONS: SectionNavItem[] = [
   { key: 'overview', label: '总览', short: '总览', icon: '📋' },
-  { key: 'insights', label: '今日洞察', short: '洞察', icon: '💡' },
+  { key: 'plateau', label: '"高原"最新洞察', short: '高原', icon: '🌄' },
+  { key: 'peak', label: '"高峰"最新洞察', short: '高峰', icon: '⛰️' },
+  { key: 'insights', label: '今日洞察(旧)', short: '旧洞察', icon: '💡' },
   { key: 'relevance', label: '与当前工作的相关性', short: '相关性', icon: '🧭' },
   { key: 'gaps', label: '问题发现', short: '问题发现', icon: '🔬' },
   { key: 'rss', label: '今日热点', short: 'Top热点', icon: '📰' },
