@@ -13,7 +13,7 @@ export const DAILY_SECTIONS: SectionNavItem[] = [
   { key: 'plateau', label: '"高原"最新洞察', short: '高原', icon: '🌄' },
   { key: 'peak', label: '"高峰"最新洞察', short: '高峰', icon: '⛰️' },
   { key: 'insights', label: '今日洞察(旧)', short: '旧洞察', icon: '💡' },
-  { key: 'relevance', label: '与当前工作的相关性', short: '相关性', icon: '🧭' },
+  { key: 'relevance', label: '与当前01专项工作的相关性', short: '相关性', icon: '🧭' },
   { key: 'gaps', label: '问题发现', short: '问题发现', icon: '🔬' },
   { key: 'rss', label: '今日热点', short: 'Top热点', icon: '📰' },
   { key: 'hackernews', label: 'Hacker News 热议', short: 'HN', icon: '🟧' },

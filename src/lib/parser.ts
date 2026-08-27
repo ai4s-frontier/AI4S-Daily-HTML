@@ -18,7 +18,7 @@ const SECTION_TITLE_FALLBACK: Record<string, string> = {
   insights: '今日洞察',
   plateau: '"高原"最新洞察',
   peak: '"高峰"最新洞察',
-  relevance: '与当前工作的相关性',
+  relevance: '与当前01专项工作的相关性',
   gaps: '问题发现',
   rss: '今日Top热点',
   hackernews: 'Hacker News 热议',
