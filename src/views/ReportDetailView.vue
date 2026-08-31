@@ -3,7 +3,6 @@ import { computed, onMounted, ref } from 'vue'
 import { getReport } from '../api/client'
 import { profileBadgeClass, profileLabel } from '../sections'
 import type { ReportDetail } from '../types'
-import HighlightList from '../components/HighlightList.vue'
 import MarkdownBody from '../components/MarkdownBody.vue'
 import SectionNav from '../components/SectionNav.vue'
 
@@ -69,15 +68,6 @@ function fmtDate(r: ReportDetail) {
         >
           {{ report.title }}
         </h2>
-
-        <p
-          v-if="report.lead"
-          class="mt-5 border-l-[3px] border-stone-300 pl-5 font-serif text-lg leading-relaxed text-stone-600 dark:border-stone-700 dark:text-stone-300"
-        >
-          {{ report.lead }}
-        </p>
-
-        <HighlightList :items="report.highlights" class="mt-6" />
 
         <div class="mt-8 border-t-2 border-stone-900 dark:border-stone-100" />
         <div class="mt-[3px] border-t border-stone-400 dark:border-stone-600" />

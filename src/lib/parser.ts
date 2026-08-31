@@ -28,7 +28,8 @@ const SECTION_TITLE_FALLBACK: Record<string, string> = {
 
 // insights sentinel 段内的 H2 → 子板块 key
 // 带符号变体为日报模板新标题,纯文本变体保留以兼容历史报告;
-// 🌄"高原"/⛰️"高峰" 为 2026-08-27 起新板块(替换 💡 今日洞察,旧 key 保留兼容历史报告)
+// 🌄"高原"/⛰️"高峰" 为 2026-08-27 起新板块(替换 💡 今日洞察);
+// 💡 今日洞察(insights 子板块)2026-08-31 起在归档界面退役,拆分后过滤不再展示
 const INSIGHTS_H2_KEYS: Record<string, string> = {
   总览: 'overview',
   '📋 总览': 'overview',
@@ -192,7 +193,10 @@ function splitSections(body: string): Section[] {
     md = md.trim()
     if (!md) continue
     if (key === 'insights') {
-      sections.push(...splitH2Sections(md, INSIGHTS_H2_KEYS, 'insights'))
+      // 旧 💡 今日洞察 子板块(key === 'insights',含未识别 H2 的 fallback)退役不展示
+      sections.push(
+        ...splitH2Sections(md, INSIGHTS_H2_KEYS, 'insights').filter((s) => s.key !== 'insights'),
+      )
       continue
     }
     if (key === 'weekly') {

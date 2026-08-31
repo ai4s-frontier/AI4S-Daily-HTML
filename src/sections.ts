@@ -7,12 +7,11 @@ export interface SectionNavItem {
   icon: string
 }
 
-/** 日报栏目(早报板块) */
+/** 日报栏目(早报板块);今日洞察(旧)2026-08-31 起退役,不再展示 */
 export const DAILY_SECTIONS: SectionNavItem[] = [
   { key: 'overview', label: '总览', short: '总览', icon: '📋' },
   { key: 'plateau', label: '"高原"最新洞察', short: '高原', icon: '🌄' },
   { key: 'peak', label: '"高峰"最新洞察', short: '高峰', icon: '⛰️' },
-  { key: 'insights', label: '今日洞察(旧)', short: '旧洞察', icon: '💡' },
   { key: 'relevance', label: '与当前01专项工作的相关性', short: '相关性', icon: '🧭' },
   { key: 'gaps', label: '问题发现', short: '问题发现', icon: '🔬' },
   { key: 'rss', label: '今日热点', short: 'Top热点', icon: '📰' },
