@@ -23,6 +23,8 @@ const SECTION_TITLE_FALLBACK: Record<string, string> = {
   rss: '今日Top热点',
   hackernews: 'Hacker News 热议',
   weekly: '周报洞察',
+  weekly_plateau: '"高原"最新洞察',
+  weekly_peak: '"高峰"最新洞察',
   weekly_top: '本周Top热点',
 }
 
@@ -42,10 +44,15 @@ const INSIGHTS_H2_KEYS: Record<string, string> = {
 }
 
 // weekly sentinel 段内的 H2 → 子板块 key
-// 带符号变体为 2026-08-24 起周报模板新标题,纯文本变体保留以兼容历史报告
+// 🌄"高原"/⛰️"高峰" 为 2026-09-05 起新格式(与日报一致);
+// 💡 本周洞察/📈 趋势分析 为旧格式,保留映射兼容历史报告
 const WEEKLY_H2_KEYS: Record<string, string> = {
   总览: 'weekly_overview',
   '📋 总览': 'weekly_overview',
+  '"高原"最新洞察': 'weekly_plateau',
+  '🌄 "高原"最新洞察': 'weekly_plateau',
+  '"高峰"最新洞察': 'weekly_peak',
+  '⛰️ "高峰"最新洞察': 'weekly_peak',
   本周洞察: 'weekly_insights',
   '💡 本周洞察': 'weekly_insights',
   趋势分析: 'weekly_trends',

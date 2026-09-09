@@ -9,17 +9,17 @@ const route = useRoute()
 // 页脚小字随当前页面变化:栏目页用栏目全名(如"与当前工作的相关性"),其余页面用页面名
 const pageName = computed(() => {
   if (route.name === 'section') {
-    return SECTION_LABEL[String(route.params.key)] ?? '每日研判'
+    return SECTION_LABEL[String(route.params.key)] ?? '每日观察'
   }
   switch (route.name) {
     case 'list':
-      return '每日研判归档'
+      return '每日观察归档'
     case 'list-weekly':
-      return '每周研判归档'
+      return '每周观察归档'
     case 'detail':
-      return '研判归档'
+      return '观察归档'
     default:
-      return '每日研判'
+      return '每日观察'
   }
 })
 </script>

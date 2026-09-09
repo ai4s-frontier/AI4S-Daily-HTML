@@ -57,7 +57,7 @@ function pillClass(active: boolean) {
           AI4S Daily
         </p>
         <h1 class="mt-1 font-serif text-2xl font-bold text-stone-900 dark:text-stone-50">
-          {{ weekly ? '每周研判' : '每日研判' }}
+          {{ weekly ? '每周观察' : '每日观察' }}
         </h1>
         <div
           class="mt-4 border-t-2"
@@ -67,7 +67,7 @@ function pillClass(active: boolean) {
       </router-link>
       <router-link
         :to="switchTo"
-        :title="weekly ? '切换到每日研判' : '切换到每周研判'"
+        :title="weekly ? '切换到每日观察' : '切换到每周观察'"
         class="mt-1 shrink-0 rounded border px-1.5 py-0.5 text-xs transition-colors"
         :class="
           weekly
@@ -106,7 +106,7 @@ function pillClass(active: boolean) {
         :class="navClass($route.path === (weekly ? '/archive-weekly' : '/archive'))"
       >
         <span aria-hidden="true">{{ weekly ? '📅' : '🗞️' }}</span>
-        {{ weekly ? '每周研判归档' : '每日研判归档' }}
+        {{ weekly ? '每周观察归档' : '每日观察归档' }}
       </router-link>
     </nav>
 
@@ -122,7 +122,7 @@ function pillClass(active: boolean) {
     >
       <div class="flex items-baseline gap-2">
         <router-link :to="mastheadTo" class="font-serif text-lg font-bold text-stone-900 dark:text-stone-50">
-          {{ weekly ? '每周研判' : '每日研判' }}
+          {{ weekly ? '每周观察' : '每日观察' }}
         </router-link>
         <router-link
           :to="switchTo"

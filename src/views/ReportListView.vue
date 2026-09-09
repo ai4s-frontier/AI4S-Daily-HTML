@@ -25,7 +25,7 @@ onMounted(async () => {
 })
 
 const pageTitle = computed(() =>
-  profile.value === 'weekly' ? '每周研判归档' : '每日研判归档',
+  profile.value === 'weekly' ? '每周观察归档' : '每日观察归档',
 )
 const emptyText = computed(() =>
   profile.value === 'weekly' ? '暂无周报归档' : '暂无日报归档',

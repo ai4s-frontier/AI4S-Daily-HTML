@@ -7,28 +7,40 @@ export interface SectionNavItem {
   icon: string
 }
 
-/** 日报栏目(早报板块);今日洞察(旧)2026-08-31 起退役,不再展示 */
+/** 日报栏目(早报板块);今日洞察(旧)2026-08-31 起退役、问题发现 2026-09-09 起退役,不再展示 */
 export const DAILY_SECTIONS: SectionNavItem[] = [
   { key: 'overview', label: '总览', short: '总览', icon: '📋' },
   { key: 'plateau', label: '"高原"最新洞察', short: '高原', icon: '🌄' },
   { key: 'peak', label: '"高峰"最新洞察', short: '高峰', icon: '⛰️' },
   { key: 'relevance', label: '与当前01专项工作的相关性', short: '相关性', icon: '🧭' },
-  { key: 'gaps', label: '问题发现', short: '问题发现', icon: '🔬' },
   { key: 'rss', label: '今日热点', short: 'Top热点', icon: '📰' },
   { key: 'hackernews', label: 'Hacker News 热议', short: 'HN', icon: '🟧' },
 ]
 
-/** 周报栏目 */
+/** 周报栏目(2026-09-05 起与日报一致:高原/高峰);本周洞察/趋势分析为旧格式,仅在历史报告中出现 */
 export const WEEKLY_SECTIONS: SectionNavItem[] = [
   { key: 'weekly_overview', label: '周报总览', short: '周总览', icon: '📋' },
-  { key: 'weekly_insights', label: '本周洞察', short: '周洞察', icon: '💡' },
-  { key: 'weekly_trends', label: '趋势分析', short: '趋势', icon: '📈' },
+  { key: 'weekly_plateau', label: '"高原"最新洞察', short: '高原', icon: '🌄' },
+  { key: 'weekly_peak', label: '"高峰"最新洞察', short: '高峰', icon: '⛰️' },
   { key: 'weekly_top', label: '本周Top热点', short: '周Top', icon: '🏆' },
 ]
 
-export const SECTIONS: SectionNavItem[] = [...DAILY_SECTIONS, ...WEEKLY_SECTIONS]
+/** 历史板块(不再出现在导航,保留标签供旧报告徽章/栏目流标题展示) */
+export const LEGACY_SECTIONS: SectionNavItem[] = [
+  { key: 'insights', label: '今日洞察(旧)', short: '旧洞察', icon: '💡' },
+  { key: 'gaps', label: '问题发现(旧)', short: '问题发现', icon: '🔬' },
+  { key: 'weekly_insights', label: '本周洞察(旧)', short: '周洞察', icon: '💡' },
+  { key: 'weekly_trends', label: '趋势分析(旧)', short: '趋势', icon: '📈' },
+]
 
-const WEEKLY_KEYS = new Set(WEEKLY_SECTIONS.map((s) => s.key))
+export const SECTIONS: SectionNavItem[] = [...DAILY_SECTIONS, ...WEEKLY_SECTIONS, ...LEGACY_SECTIONS]
+
+// 周报模式 key 集合 = 当前周报栏目 + 历史周报板块(旧格式报告的栏目流仍按周报前缀)
+const WEEKLY_KEYS = new Set([
+  ...WEEKLY_SECTIONS.map((s) => s.key),
+  'weekly_insights',
+  'weekly_trends',
+])
 
 /** 栏目 key 是否属于周报(决定栏目流路由前缀 /sections vs /sections-weekly) */
 export function isWeeklySection(key: string): boolean {
